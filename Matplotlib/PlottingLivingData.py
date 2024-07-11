@@ -11,9 +11,8 @@ y_vals = []
 
 index = count()
 
-
 def animate(i):
-    data = pd.read_csv('data.csv')
+    data = pd.read_csv('additonalFolder/data.csv')
     x = data['x_value']
     y1 = data['total_1']
     y2 = data['total_2']

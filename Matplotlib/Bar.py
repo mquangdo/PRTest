@@ -2,8 +2,9 @@ from matplotlib import pyplot as plt
 import numpy as np
 import csv
 from collections import Counter
+from matplotlib.animation import FuncAnimation
 
-with open('data.csv', 'r') as csv_file:
+with open('additonalFolder/data.csv', 'r') as csv_file:
     csv_reader = csv.DictReader(csv_file) #đọc từ điển ra 1 doi tuong iterable
 
     language_counter = Counter() #tạo ra một đối tượng đếm, ở đây language_counter là một từ điển
@@ -23,9 +24,10 @@ with open('data.csv', 'r') as csv_file:
     for row in csv_reader:
         language_counter.update(row['LanguagesWorkedWith'].split(';'))#tham số là một list, .update sẽ đếm số phần tử giống nhau trong list
 
-print(language_counter)
 
-print(language_counter.most_common(15))
+# print(language_counter)
+# print(language_counter.most_common(15))
+
 
 language = []
 popularity = []
@@ -34,8 +36,8 @@ for i, v in language_counter.most_common(15):
     language.append(i)
     popularity.append(v)
 
-print(language)
-print(popularity)
+# print(language)
+# print(popularity)
 
 plt.barh(language, popularity) #barh để đổi axes
 plt.title('Most popular programming languages')
@@ -76,3 +78,8 @@ plt.show()
 # plt.tight_layout()
 #
 # plt.show()
+
+from itertools import count
+
+index = count()
+x = []

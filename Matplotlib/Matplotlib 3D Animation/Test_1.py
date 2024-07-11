@@ -5,8 +5,6 @@ import numpy as np
 import time
 from itertools import count
 
-ax = plt.axes(projection = '3d')
-
 # x = np.arange(-10,10,0.1)
 # y = np.arange(-10, 10, 0.1)
 # X, Y = np.meshgrid(x, y)
@@ -16,17 +14,18 @@ ax = plt.axes(projection = '3d')
 
 index = count()
 t = []
+fig, ax = plt.subplots()
+x = np.linspace(-10, 10, 100)
+f = lambda x: (18 - 3 * x) / 2
+g = lambda x: (2 + x) / 2
+
 
 def draw(i):
     t.append(next(index) / 10)
-
-    y1 = np.sin(np.array(t))
-    y2 = np.cos(np.array(t))
-
+    y1 = f(np.array(t))
+    y2 = g(np.array(t))
     plt.cla()
-
-    ax.plot3D(y1, y2, t)
-
+    ax.plot(y1, t)
+    ax.plot(y2, t)
 ani = FuncAnimation(plt.gcf(), draw, interval = 10)
-
 plt.show()

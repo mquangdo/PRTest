@@ -1,7 +1,7 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-data = pd.read_csv('data1.csv')#data là một dataframe
+data = pd.read_csv('additonalFolder/data1.csv')#data là một dataframe
 ages = data['Age']#lấy ra cột Age
 dev_salaries = data['All_Devs']
 py_salaries = data['Python']

@@ -21,7 +21,7 @@ colors = [7, 5, 9, 7, 5, 7, 2, 5, 3, 7, 1, 2, 8, 1, 9, 2, 5, 6, 7, 5]
 sizes = [209, 486, 381, 255, 191, 315, 185, 228, 174,
          538, 239, 394, 399, 153, 273, 293, 436, 501, 397, 539]
 
-data = pd.read_csv('2019-05-31-data.csv')
+data = pd.read_csv('additonalFolder/2019-05-31-data.csv')
 view_count = data['view_count']
 likes = data['likes']
 ratio = data['ratio']

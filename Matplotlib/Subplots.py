@@ -1,9 +1,8 @@
 import pandas as pd
 from matplotlib import pyplot as plt
 
-plt.style.use('seaborn')
 
-data = pd.read_csv('data1.csv')
+data = pd.read_csv('additonalFolder/data1.csv')
 ages = data['Age']
 dev_salaries = data['All_Devs']
 py_salaries = data['Python']
